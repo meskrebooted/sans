@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sans.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/snastri.png " type="image/png">
+</head>
+<body>
+    <img src="img/ossofunny.png" alt="sans.">
+    <p id="z">press "z" to continue.</p>
+    <div id="dialog-container"></div>
+    <br>
+    <audio  id="audio-player" src="" hidden></audio>
+    <script>
+        const dialogs = [
+            '<audio id="audio" autoplay <source src="img/bl.mp3" type="audio/mpeg"></audio><img id="gif" src="img/first.gif" alt="dialogo 1">',
+            '<audio id="audio" autoplay <source src="img/bla.mp3" type="audio/mpeg"></audio><img src="img/boh.png" alt="sans."> <img id="gif" src="img/second.gif" alt="dialogo 2">',
+            '<audio id="audio" autoplay <source src="img/bla.mp3" type="audio/mpeg"></audio><img id="gif" src="img/three.gif" alt="dialogo 3">',
+            '<audio id="audio" autoplay <source src="img/bla.mp3" type="audio/mpeg"></audio><audio id="audio" autoplay <source src="img/bl.mp3" type="audio/mpeg"></audio><img id="gif" src="img/four.gif" alt="dialogo 4">',
+            '<audio id="audio" autoplay <source src="img/bla.mp3" type="audio/mpeg"></audio><audio id="audio" autoplay loop><source src="img/expl.mp3" type="audio/mpeg"></audio><img id="gif" src="img/five.gif" alt="dialogo 5"> <img id="gif" src="img/exp.gif" alt="sans.">',
+            '<img src="img/black.png" alt="sans."><img src="img/wohooo.png" alt="sans.">',
+            '<audio id="audio" autoplay <source src="img/bla.mp3" type="audio/mpeg"></audio><img src="img/black.png" alt="sans."><img src="img/snastri.png" alt="sans."><img id="gif" src="img/six.gif" alt="dialogo 6">',
+            '<audio id="audio" autoplay <source src="img/dog.mp3" type="audio/mpeg" onended="handleKeyPress({ key: \'z\' })"></audio><img src="img/black.png" alt="sans."><img id="wohooo" src="img/wohooo.png" alt="sans."><img id="explosion" src="img/exp.gif" alt="sans.">'
+        ];
+
+        let currentDialogIndex = 0;
+
+        function handleKeyPress(event) {
+            if (event.key === 'z' || event.key === 'Z') {
+                const audioPlayer = document.getElementById('audio-player');
+                if (currentDialogIndex === 0) {
+                    audioPlayer.src = 'img/sans.mp3';
+                    audioPlayer.loop = true;
+                    audioPlayer.play();
+                } else if (currentDialogIndex === dialogs.length - 1) {
+                    audioPlayer.pause();
+                    audioPlayer.src = '';
+                }
+                const dialogContainer = document.getElementById('dialog-container');
+                const pressZText = document.getElementById('z');
+                
+                // Hide the "Premi Z" text
+                pressZText.style.display = 'none';
+
+                if (currentDialogIndex < dialogs.length) {
+                    dialogContainer.innerHTML = dialogs[currentDialogIndex];
+                    currentDialogIndex++;
+                } else {
+                    dialogContainer.innerHTML = '';
+                    currentDialogIndex = 0; 
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
+</body>
+</html>
