@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+img {
+    cursor: pointer;
+    width: 200px; 
+    height: auto;  
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#gif {
+    width: 800px;
+    height: auto;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    margin-top: 300px; 
+    position:bottom; 
+    display: block; 
+    
+}
+@font-face {
+    font-family: sans;
+    src: url(img/comic.ttf);
+}
+#z
+{
+    font-family: sans;
+    color: white;
+    margin-top: 400px; 
+    position:bottom; 
+    display: block;
+}
+#wohooo {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fastSpin 0.5s ease-in-out, showExplosion 0s 0.5s ease-in, moveOut 0.3s 0.8s ease-out forwards;
+}
+
+#explosion {
+    position: absolute;
+    width: 800px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Inizia invisibile */
+    animation: fadeIn 0.2s 0.5s ease-in forwards, fadeOutExplosion 0.3s 0.8s ease-out forwards; /* Fade-in e fade-out */
+}
+
+@keyframes fastSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(1440deg); /* Spins very fast */
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-2880deg) scaleX(-1); /* Spins back faster and mirrors */
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        left: 50%;
+        opacity: 1;
+    }
+    100% {
+        left: 150%; /* Moves out of the screen */
+        opacity: 0; /* Fades out */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* L'esplosione diventa visibile */
+    }
+}
+
+@keyframes fadeOutExplosion {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; /* L'esplosione sparisce */
+    }
+}
