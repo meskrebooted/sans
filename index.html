@@ -55,6 +55,15 @@
         }
 
         document.addEventListener('keydown', handleKeyPress);
+         function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+
+    if (isMobile()) {
+        document.getElementById('z').textContent = 'tocca lo schermo per continuare il dialogo.';
+        document.addEventListener('touchstart', handleTouchStart);
+    }
     </script>
 </body>
 </html>
