@@ -8,7 +8,20 @@ body {
     height: 100vh;
     overflow: hidden; /* Prevents scrolling */
 }
-
+#heh
+{
+     cursor: pointer;
+    width: 300px; 
+    height: auto;  
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+    
 img {
     cursor: pointer;
     width: 200px; 
