@@ -59,11 +59,11 @@
         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
-
     if (isMobile()) {
-        document.getElementById('z').textContent = 'tocca lo schermo per continuare il dialogo.';
-        document.addEventListener('touchstart', handleTouchStart);
-    }
+        document.body.addEventListener('click', function(event) {
+            handleKeyPress({ key: 'z' });
+        });
+        }
     </script>
 </body>
 </html>
