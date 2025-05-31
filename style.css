@@ -20,8 +20,45 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+@media (max-width: 600px) {
+   body {
     
+    overflow: hidden;
+    }
+    #heh {
+        width: 250px;
+    }
+    img {
+        width: 100px;
+    }
+    #gif {
+        width: 95vw;
+        max-width: 80%;
+        margin-top: 0px;
+    }
+    #exp {
+        width: 400vw;
+        
+    }
+    #z {
+        margin-top: 180px;
+        font-size: 1.1em;
+        text-align: center;
+        display: block;
+        width: 80vw;
+        box-sizing: border-box;
+    }
+    #wohooo {
+        width: 120px;
+    }
+}
+  
+#exp {
+    width: 300vw;
+}
 img {
     cursor: pointer;
     width: 200px; 
@@ -60,6 +97,17 @@ img {
     margin-top: 400px; 
     position:bottom; 
     display: block;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    animation: flashShadow 1.5s infinite alternate;
+    }
+
+    @keyframes flashShadow {
+        0% {
+            text-shadow: 0 0 12px #fff;
+        }
+        100% {
+            text-shadow: 0 0 30px rgb(0, 0, 0);
+        }
 }
 #wohooo {
     position: absolute;
