@@ -40,6 +40,8 @@
                 }
                 const dialogContainer = document.getElementById('dialog-container');
                 const pressZText = document.getElementById('z');
+                document.body.addEventListener('click', function(event) {
+                handleKeyPress({ key: 'z' });
                 
                 // Hide the "Premi Z" text
                 pressZText.style.display = 'none';
@@ -55,15 +57,6 @@
         }
 
         document.addEventListener('keydown', handleKeyPress);
-         function isMobile() {
-        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
-
-    if (isMobile()) {
-        document.body.addEventListener('click', function(event) {
-            handleKeyPress({ key: 'z' });
-        });
-        }
     </script>
 </body>
 </html>
